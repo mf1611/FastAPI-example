@@ -1,0 +1,9 @@
+version: "3"
+services:
+  api:  # 立ち上げるサービスの名称(コンテナ名を指定しない場合，これが利用される)
+    build: .
+    container_name: iris-api  # コンテナ名
+    working_dir: /app/
+    ports:
+      - 80:80  # local:remoteのポートフォワード
+    tty: true # これを入れないと起動してもすぐに終了してしまう、docker runの場合は引数-itdで解決する 
